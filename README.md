@@ -3,9 +3,9 @@
 
 A news feeder app.
 
-### App Icon:
+### App Images:
 
-![Alt text](feedME/Assets.xcassets/AppIcon.appiconset/feedmelogo-83.5@2x.png)
+<img src="https://github.com/dschrijn/feedMe/blob/master/feedMe/images/image1.PNG" width="180" height="300"> <img src="https://github.com/dschrijn/feedMe/blob/master/feedMe/images/image2.PNG" width="180" height="300"> <img src="https://github.com/dschrijn/feedMe/blob/master/feedMe/images/image3.PNG" width="180" height="300"> <img src="https://github.com/dschrijn/feedMe/blob/master/feedMe/images/image4.PNG" width="180" height="300">
 
 
 ### Overview:
@@ -13,7 +13,7 @@ A news feeder app.
 feedMe is the easiest app to keep up-to-date with your news. Select from several different sources, while filtering through top & latest news. It features news in the technology, entertainment, and world categories. Stay informed.
 
 Pulls multiple API sources from <a href="http://newsapi.org//">
-newsapi.org</a>. 
+newsapi.org</a> 
 
 ### Features:
 
