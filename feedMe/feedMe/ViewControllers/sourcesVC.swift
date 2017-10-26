@@ -8,28 +8,36 @@
 
 import UIKit
 
+// MARK: - Global Variable
+
 let kSourceKey = "globalSourceKey"
 
 class sourcesVC: UIViewController {
     
+    // MARK: - Variables
+    
     weak var delegate: FilterDelegate?
+    
+    
+    // MARK: - App Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    // MARK: - IBActions
+    
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func newAPIBtn(_ sender: Any) {
         if let url = NSURL(string: "https://newsapi.org/") {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
         }
     
     }
-    
-    //Mark: Buttons - to change "News Sources"
     
     @IBAction func abcBtn(_ sender: Any) {
         let apiManager = APIManager()

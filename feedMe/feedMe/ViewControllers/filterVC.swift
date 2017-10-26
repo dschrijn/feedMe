@@ -8,18 +8,28 @@
 
 import UIKit
 
+// MARK: - Protocol
+
 protocol FilterDelegate: class {
     func newsUpdate(_ news: [FeedrInfo])
 }
 
 class filterVC: UIViewController {
     
+    // MARK: - Variables
+    
     weak var delegate: FilterDelegate?
     
+    
+    // MARK: - App Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    // MARK: - IBActions
+    
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

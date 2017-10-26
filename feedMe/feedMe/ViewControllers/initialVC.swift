@@ -10,20 +10,19 @@ import UIKit
 
 class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterDelegate {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableVC: UITableView!
     @IBOutlet weak var btnView: UIView!
+    
+    // MARK: - Variables
     
     var spinner = UIActivityIndicatorView()
     var loadingView = UIView()
     var loadingLabel = UILabel()
-    
-    func newsUpdate(_ news: [FeedrInfo]) {
-        self.news = news
-        tableVC.reloadData()
-    }
-    
-    // Calls FeedrInfo class
     var news = [FeedrInfo]()
+    
+    // MARK: - App Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +39,23 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         
         self.tableVC.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let apiManager = APIManager()
+        let source = UserDefaults.standard.string(forKey: kSourceKey)!
+        apiManager.parsedData(sort: "top", source: source) { (news) in
+            self.news = news
+            print(news)
+            //Reloads tableview
+            DispatchQueue.main.async {
+                self.removeLoadingScreen()
+                self.tableVC.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Functions
     
     private func setLoadScreen () {
         
@@ -69,8 +85,6 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         
     }
     
-    //Remove the activity indicator from the main view
-    
     private func removeLoadingScreen() {
         
         //Hides and stops the text and the spinner
@@ -80,25 +94,31 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let apiManager = APIManager()
-        let source = UserDefaults.standard.string(forKey: kSourceKey)!
-        apiManager.parsedData(sort: "top", source: source) { (news) in
-            self.news = news
-            print(news)
-            //Reloads tableview
-            DispatchQueue.main.async {
-                self.removeLoadingScreen()
-                self.tableVC.reloadData()
+    func newsUpdate(_ news: [FeedrInfo]) {
+        self.news = news
+        tableVC.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? secondVC {
+            if let theArticle = sender as? FeedrInfo {
+                destination.articlesInfo = theArticle
             }
         }
+        
+        if let destination = segue.destination as? filterVC {
+            destination.delegate = self
+        }
+        
+        if let destination = segue.destination as? sourcesVC {
+            destination.delegate = self
+        }
+        
     }
     
     
-    // MARK: - Table view data source
+    // MARK: - TableView Datasource
     
-    //    Sets height for row
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
@@ -135,8 +155,6 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         return cell
     }
     
-    // Mark: - Segue to second View Controller
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let articleInfo = news[indexPath.row]
         
@@ -146,25 +164,8 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? secondVC {
-            if let theArticle = sender as? FeedrInfo {
-                destination.articlesInfo = theArticle
-            }
-        }
-        
-        if let destination = segue.destination as? filterVC {
-            destination.delegate = self
-        }
-        
-        if let destination = segue.destination as? sourcesVC {
-            destination.delegate = self
-        }
-        
-    }
     
-    
-    //Mark: - Buttons to segue to Sources & Filter
+    //Mark: - IBActions
     
     @IBAction func sourcesBtn(_ sender: Any) {
         performSegue(withIdentifier: "toSources", sender: self)
