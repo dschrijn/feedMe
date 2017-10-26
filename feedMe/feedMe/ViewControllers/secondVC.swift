@@ -46,7 +46,7 @@ class secondVC: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        dataScrollView.contentSize = CGSize(width: 375, height: 741)
+        dataScrollView.contentSize = CGSize(width: dataScrollView.contentSize.width, height: dataScrollView.contentSize.height)
         dataScrollView.delaysContentTouches = true
         dataScrollView.canCancelContentTouches = true
         

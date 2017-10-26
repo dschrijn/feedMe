@@ -656,7 +656,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Sources" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-oe-ddb">
-                                <rect key="frame" x="72.5" y="68" width="230" height="40"/>
+                                <rect key="frame" x="73" y="68" width="230" height="40"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -677,10 +677,9 @@
                             <constraint firstItem="s5X-12-EXV" firstAttribute="top" secondItem="mps-bF-ZnV" secondAttribute="top" id="3oQ-D9-zVi"/>
                             <constraint firstItem="NKN-hv-0jJ" firstAttribute="top" secondItem="2WA-WX-QGF" secondAttribute="bottom" constant="20" id="4I8-Qs-gEg"/>
                             <constraint firstItem="4Fs-0w-2rT" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leadingMargin" id="4uo-9P-GCn"/>
-                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="QNa-oe-ddb" secondAttribute="trailing" constant="72.5" id="6nc-9x-cNk"/>
                             <constraint firstItem="mZb-sF-Psj" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leadingMargin" id="95p-Cv-9bv"/>
                             <constraint firstItem="2WA-WX-QGF" firstAttribute="trailing" secondItem="mps-bF-ZnV" secondAttribute="trailingMargin" id="CAb-TK-mNa"/>
-                            <constraint firstItem="QNa-oe-ddb" firstAttribute="top" secondItem="zAz-kI-gYE" secondAttribute="bottom" constant="48" id="EDY-ej-DKM"/>
+                            <constraint firstItem="QNa-oe-ddb" firstAttribute="top" secondItem="s5X-12-EXV" secondAttribute="bottom" constant="13" id="GGF-5B-KNJ"/>
                             <constraint firstItem="FhV-OF-GES" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leading" constant="5" id="IV7-65-eLX"/>
                             <constraint firstItem="4Fs-0w-2rT" firstAttribute="trailing" secondItem="mps-bF-ZnV" secondAttribute="trailingMargin" id="JQe-Oc-mWV"/>
                             <constraint firstItem="nC7-jU-jt3" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leadingMargin" id="Kii-YV-fze"/>
@@ -697,10 +696,10 @@
                             <constraint firstItem="Y7u-mw-hXR" firstAttribute="top" secondItem="mZb-sF-Psj" secondAttribute="bottom" constant="20" id="pwW-ZD-lr9"/>
                             <constraint firstItem="s5X-12-EXV" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leading" id="t1b-s8-WX3"/>
                             <constraint firstItem="NKN-hv-0jJ" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leadingMargin" id="tdq-VX-WRv"/>
+                            <constraint firstItem="QNa-oe-ddb" firstAttribute="centerX" secondItem="s5X-12-EXV" secondAttribute="centerX" id="tlt-c1-dp3"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="FhV-OF-GES" secondAttribute="trailing" constant="211" id="uUr-fv-AlF"/>
                             <constraint firstItem="mZb-sF-Psj" firstAttribute="top" secondItem="nC7-jU-jt3" secondAttribute="bottom" constant="20" id="uoV-fv-rAZ"/>
                             <constraint firstItem="Y7u-mw-hXR" firstAttribute="trailing" secondItem="mps-bF-ZnV" secondAttribute="trailingMargin" id="v01-cM-R9o"/>
-                            <constraint firstItem="QNa-oe-ddb" firstAttribute="leading" secondItem="mps-bF-ZnV" secondAttribute="leading" constant="72.5" id="wuC-3c-Bcw"/>
                         </constraints>
                     </view>
                 </viewController>
