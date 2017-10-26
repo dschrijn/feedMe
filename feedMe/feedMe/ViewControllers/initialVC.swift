@@ -132,7 +132,6 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
         
         cell.firstLabel.text = news[indexPath.row].title
         
-        
         return cell
     }
     
@@ -141,12 +140,14 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, F
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let articleInfo = news[indexPath.row]
         
-        performSegue(withIdentifier: "toWebView", sender: articleInfo)
+        //performSegue(withIdentifier: "toWebView", sender: articleInfo)
+        
+        performSegue(withIdentifier: "toSecondVC", sender: articleInfo)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? WebVC {
+        if let destination = segue.destination as? secondVC {
             if let theArticle = sender as? FeedrInfo {
                 destination.articlesInfo = theArticle
             }

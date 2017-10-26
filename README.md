@@ -23,4 +23,4 @@ newsapi.org</a>
 
 ### Technologies & Tools:
 
-Swift, Xcode, newsAPI, JSON, Sketch
+Swift, Xcode, WebKit, API, JSON, Sketch
