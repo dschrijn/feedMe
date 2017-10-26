@@ -11,7 +11,6 @@ import UIKit
 
 class FeedrInfo {
     
-    //Input variables
     var arthor: String
     var title: String
     var description: String
@@ -19,7 +18,6 @@ class FeedrInfo {
     var image: UIImage?
     var imageURL: String
     
-    //Initialize variables
     init (author: String, title: String, description: String, pageUrl: String, imageURL: String) {
         self.arthor = author
         self.title = title
@@ -29,7 +27,7 @@ class FeedrInfo {
         
     }
     
-    //UIImage URL request function
+    // MARK: - UIImage URL request function
     
     func getImage(_ completion: @escaping (UIImage) -> Void) {
         
@@ -55,7 +53,7 @@ class FeedrInfo {
     
     
     
-    //Static function for FeedrInfo
+    // MARK: - Static function for FeedrInfo
     
     static func create(from dictionary: [String: Any]) -> FeedrInfo? {
         

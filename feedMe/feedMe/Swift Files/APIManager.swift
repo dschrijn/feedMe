@@ -12,29 +12,26 @@ class APIManager {
     
     //Mark: JSON
     
-    //create func to Parse JSON Dara
+    //create func to Parse JSON Data
     func parsedData (sort: String, source: String, completion: @escaping ([FeedrInfo]) -> Void) {
         
         
         // API Key & URL
         let apiKey = "2731242f9c9a40b18bf24d8feced3fc3"
         let kURL = "https://newsapi.org/v1/articles?source=\(source)&sortBy=\(sort)"
-        
-        print(kURL)
+
         // URL Session here
         guard let url = URL(string: kURL) else { return }
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue(apiKey, forHTTPHeaderField: "x-api-key")
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            //Check for data errors
             guard error == nil else { return }
-            
             guard let data = data else {
                 print("Error with task & receiving data!")
                 return
             }
-            //Do, try, catch statement
+            
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 guard let info = json?["articles"] as? [[String: Any]] else {
@@ -57,10 +54,10 @@ class APIManager {
     }
 }
 
-    //Mark: Notification function
+
+// Mark: - Notification function
 
 func sendAlertController() {
-    
     
     //No latest feature
     let alertController = UIAlertController(title: "Message", message: "Source does not have a latest filter", preferredStyle: UIAlertControllerStyle.actionSheet)

@@ -10,10 +10,13 @@ import UIKit
 
 class customTVCell: UITableViewCell {
 
+    // MARK: - Variables
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageReview: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
+    
+    // MARK: - App Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,10 +37,15 @@ class customTVCell: UITableViewCell {
         imageReview.layer.cornerRadius = 4.0
         imageReview.layer.masksToBounds = true
     }
+    
+    // MARK: - Functions
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
 }
+
+
+
+
