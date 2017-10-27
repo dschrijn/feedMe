@@ -206,18 +206,8 @@
                                                 <color key="shadowColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qZ-RK-hBt">
-                                                <rect key="frame" x="55" y="506" width="233" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Continue to story">
-                                                    <color key="titleColor" red="0.15474909364787581" green="0.32749853196486928" blue="0.86220415900735303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="toStoryInApp:" destination="MnJ-IJ-hau" eventType="touchUpInside" id="xQT-0t-3j4"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyS-UE-AIE">
-                                                <rect key="frame" x="55" y="560" width="233" height="30"/>
+                                                <rect key="frame" x="55" y="505" width="233" height="30"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="View story in Safari">
                                                     <color key="titleColor" red="0.15294117647058825" green="0.32941176470588235" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,16 +230,13 @@
                                             <constraint firstItem="Ie0-o8-Mqw" firstAttribute="top" secondItem="YVQ-lk-Dvs" secondAttribute="bottom" constant="1" id="LcW-be-6d4"/>
                                             <constraint firstItem="Ie0-o8-Mqw" firstAttribute="top" secondItem="AGh-q9-Ie9" secondAttribute="bottom" constant="1" id="S88-qM-Zxj"/>
                                             <constraint firstItem="AGh-q9-Ie9" firstAttribute="leading" secondItem="LEs-ba-Zso" secondAttribute="leading" constant="8" id="XxC-1B-5sx"/>
-                                            <constraint firstItem="4qZ-RK-hBt" firstAttribute="top" secondItem="tac-8O-OGy" secondAttribute="bottom" constant="25" id="YQ5-kp-Wrp"/>
-                                            <constraint firstItem="QyS-UE-AIE" firstAttribute="top" secondItem="4qZ-RK-hBt" secondAttribute="bottom" constant="24" id="ac6-c1-5uw"/>
+                                            <constraint firstItem="QyS-UE-AIE" firstAttribute="top" secondItem="tac-8O-OGy" secondAttribute="bottom" constant="24" id="gdD-km-QhA"/>
                                             <constraint firstAttribute="trailing" secondItem="AGh-q9-Ie9" secondAttribute="trailing" constant="8" id="ioh-Sx-qLs"/>
                                             <constraint firstAttribute="trailing" secondItem="YVQ-lk-Dvs" secondAttribute="trailing" constant="10" id="oyy-Na-Enr"/>
                                             <constraint firstItem="YVQ-lk-Dvs" firstAttribute="top" secondItem="LEs-ba-Zso" secondAttribute="top" constant="8" id="pDJ-vk-xEz"/>
                                             <constraint firstItem="YVQ-lk-Dvs" firstAttribute="leading" secondItem="LEs-ba-Zso" secondAttribute="leading" constant="8" id="pbM-F8-FQb"/>
                                             <constraint firstAttribute="trailing" secondItem="Ie0-o8-Mqw" secondAttribute="trailing" constant="10" id="rQR-U5-wSj"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4qZ-RK-hBt" secondAttribute="trailing" constant="55" id="sLN-CW-cvb"/>
                                             <constraint firstItem="tac-8O-OGy" firstAttribute="leading" secondItem="LEs-ba-Zso" secondAttribute="leading" constant="8" id="xlX-dJ-kU1"/>
-                                            <constraint firstItem="4qZ-RK-hBt" firstAttribute="leading" secondItem="LEs-ba-Zso" secondAttribute="leading" constant="55" id="zA8-dB-5YU"/>
                                             <constraint firstItem="tac-8O-OGy" firstAttribute="top" secondItem="1TN-Ya-SqR" secondAttribute="bottom" constant="13" id="zSv-J9-zCz"/>
                                         </constraints>
                                     </view>
@@ -332,7 +319,6 @@
                         <outlet property="shadowView" destination="YVQ-lk-Dvs" id="RIR-5z-cz5"/>
                         <outlet property="titleLabel" destination="1TN-Ya-SqR" id="Jqk-nN-QC7"/>
                         <outlet property="toSafariButton" destination="QyS-UE-AIE" id="ZnM-ba-lWx"/>
-                        <outlet property="toStoryButton" destination="4qZ-RK-hBt" id="sGL-iE-P3b"/>
                         <segue destination="Z8d-NP-DXS" kind="presentation" identifier="toWebView" modalTransitionStyle="crossDissolve" id="kTk-bd-baw"/>
                     </connections>
                 </viewController>

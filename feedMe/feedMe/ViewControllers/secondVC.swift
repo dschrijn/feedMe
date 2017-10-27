@@ -19,7 +19,6 @@ class secondVC: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var blurImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var toStoryButton: UIButton!
     @IBOutlet weak var toSafariButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var shadowView: UIView!
@@ -69,7 +68,6 @@ class secondVC: UIViewController {
         shadowBlurView.layer.shadowPath = UIBezierPath(roundedRect: shadowBlurView.bounds, cornerRadius: 5).cgPath
         shadowBlurView.addSubview(blurImageView)
         
-        toStoryButton.layer.cornerRadius = 4.0
         toSafariButton.layer.cornerRadius = 4.0
         
     }
@@ -100,11 +98,6 @@ class secondVC: UIViewController {
     
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-
-    
-    @IBAction func toStoryInApp(_ sender: Any) {
-        performSegue(withIdentifier: "toWebView", sender: articlesInfo)
     }
     
     @IBAction func toStoryOutsideApp(_ sender: Any) {
